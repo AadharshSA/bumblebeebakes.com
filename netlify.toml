@@ -1,0 +1,13 @@
+# Netlify build settings (used when the site is connected to GitHub).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  VITE_FORMS = "netlify"
+  NODE_VERSION = "20"
+
+# Runs netlify/functions/submission-created.js after each form submission (email + WhatsApp alert).
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
